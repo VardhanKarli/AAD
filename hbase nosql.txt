@@ -1,0 +1,22 @@
+Creates a table
+hbase> create 'st_percentage', 'Rollno', 'Percentage'
+Describe (or) desc: command returns the description of the table
+hbase> desc 'st_percentage'
+Insert: command used to insert the values into the table
+hbase> Insert values into table: put 'st_percentage', '1001',
+'Percentage:upto7thsem','98'
+scan: command is used to view the data in table
+hbase> scan 'st_percentage'
+Alter: command used to make changes to an existing table
+hbase> alter 'st_percentage','delete'=>'percentage'
+disable: To delete a table, the table has to be disabled first using the disable
+command
+hbase> disable ‘st_percentage’
+enable: command used to enable the table
+hbase> enable ‘st_percentage’
+drop: command used to delete a table. Before dropping a table, it must be
+disabled.
+hbase> drop 'st_percentage'
+exists: command used to verify, whether the table is present in the database or
+not.
+hbase> exists 'st_percentage'

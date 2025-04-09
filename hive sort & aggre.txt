@@ -1,0 +1,34 @@
+-- Create a Hive table for the sample data
+CREATE TABLE IF NOT EXISTS student_scores (
+id INT,
+name STRING,
+score INT
+)
+ROW FORMAT DELIMITED
+FIELDS TERMINATED BY ','
+STORED AS TEXTFILE;
+
+-- Load sample data into the Hive table
+INSERT OVERWRITE TABLE student_scores
+VALUES
+(1, 'Alice', 85),
+(2, 'Bob', 75),
+(3, 'Charlie', 90),
+(4, 'Alice', 95),
+(5, 'Bob', 80),
+(6, 'Charlie', 92);
+
+-- Display the original data
+SELECT * FROM student_scores;
+
+-- Sort data by the 'score' column in descending order using ORDER BY
+SELECT * FROM student_scores ORDER BY score DESC;
+
+-- Sort data by 'name' in ascending order and then by 'score' in descending order using SORT BY
+SELECT * FROM student_scores SORT BY name ASC, score DESC;
+
+-- Cluster data by 'name' using CLUSTER BY
+
+SELECT * FROM student_scores CLUSTER BY name;
+
+After the execution come out of the HiveQL. Type “quit;”
